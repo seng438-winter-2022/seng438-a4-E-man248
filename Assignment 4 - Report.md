@@ -1,260 +1,231 @@
-**SENG 438 - Software Testing, Reliability, and Quality**
+﻿## **Introduction**
 
-> **Assignment \#4**
+The objective of this lab is to gain familiarity with both Mutation and GUI Testing. This lab is composed of two parts; the first’s focus being on Mutation testing and the second’s focus being on GUI testing. In part 1, we will understand why mutation testing is important and useful, and become familiar with the PITEST software tool. In the second part, the Selenium software tool is used to test the sportchek website. 
 
-> **Mutation Testing (Fault Injection) & GUI and Web Testing**
+## **Mutation Analysis of 10 Mutants from Range Class** **(Original Test Suite)**
 
-> Instructor: Dr. Behrouz Far (far@ucalgary.ca) and Dr. Kangsoo Kim (kangsoo.kim@ucalgary.ca)
+Method: *Range shift(Range base, double delta, boolean allowZeroCrossing)*
 
-> Department of Electrical and Software Engineering
+Mutant Generated: Removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted
 
-> University of Calgary
+Status of Survival: Survived
 
-**Due Date: TBD**
+Killed By: None
 
-> **Summary:
-> Part 1:**
+Test Suite: RangeShiftTest.java
 
-- Install a mutation test tool.
+Discussion: The mutant removed the line that calls the notNullPermitted function in the ParamChecks. This function throws an *IllegalArgumentException* if the Range object *base = null*, preventing errors propagating in the following lines of code. This mutation, thus, allows null values to pass into the code past the line the function is called. This would result in potential *NullPointerExceptions* being called with attempted use of the Range object *base* when *base = null* and propagate errors.
 
-- Run mutation testing for the given test codes and your own test codes and
-  record the results.
+Method: *boolean equals(Object obj)*
 
-- Identify some equivalent mutants and describe your approach for finding them
+Mutant Generated: Negated conditional 
 
-- Design new test cases to increase your mutation score by at least 10% for
-  each class (Classes under test: `Range.java`, `DataUtilities.java`)
+Status of Survival: Killed
 
-> **Part 2:**
+Killed By: *equalsRange2IsNotARange()*
 
-- Install Selenium (TESTING TOOLS).
+Test Suite: RangeEqualsTest.java
 
-- Follow instructions in Section 2: (INSTRUCTIONS)
+Discussion: The mutant created in this line takes the condition *!(obj instanceof Range)* and negates it to *(obj instanceof Range)*. This in turn, would cause reverse functionality in the if statement surrounding it. In this case, it would cause the function to return false if the *obj* input is of the class Range. The unit test *EqualsRange2IsNotARange()* enforces the intended behaviour by checking to see if the output boolean matches to false if when *obj* is not of the class type Range, catching this mutant’s reversed effects.
 
-  - Design test cases for at least 2 functionalities (per student) of the
-    selected websites.
+Method: *boolean intersects(double b0, double b1)*
 
-  - Automate your designed test cases using Selenium and add verification
-    points to your scripts
+Mutant Generated: Changed conditional boundary
 
-- Compare Selenium with Sikulix
+Status of Survival: Survived
 
-# 1 INTRODUCTION
+Killed By: None
 
-This lab includes two parts: Mutation Testing and GUI Testing.
-Through part one, the students will learn how to inject mutation faults in a Java code-base using a mutation testing tool and how to interpret the reported mutation scores and use that knowledge to design new test cases to improve the overall quality of the test suite.
-Part two, focuses on most common way of GUI test automation, record and replay. Students will learn how to use a very well-known tool for web interface testing (Selenium) and will compare it with another alternative.
+Test Suite: RangeIntersectsTest.java
 
-# 2 PART 1: MUTATION TESTING
+Discussion: The mutation’s change to the boundary condition causes the if statement of intersects() method to run only the code within it if b0 < this.lower ignoring the case where b0 = this.lower, different from the source code behaviour. This change results in an incorrect output from the function where b0 = this.lower and b0 = this.upper as it will cause the function to return false where it should be returning true. There was no specific test case that checked for this possibility, and thus, the mutant survived.
 
-## 2.1 OBJECTIVES
+Method: *Range expandToInclude(Range range, double value)*
 
-The purpose of the first part of this assignment is to give students hands-on experience in assessing the effectiveness of their test suites created in assignments 2 and 3 using mutation testing. To do this, students will need to create mutants (faulty versions) of the SUT, and then run their test suite against the mutants to determine if their test suite can accurately distinguish (kill!) mutants.
+Mutant Generated: removed conditional - replaced equality check with false
 
-After completing part 1, students will:
+Status of Survival: Killed
 
-- gain an understanding of what mutation testing is and why it is useful
+Killed By: *rangeIsNull()*
 
-- be able to measure the mutation score of their test suites in order to analyze the results
+Test Suite: RangeExpandToIncludeTest.java
 
-- become familiar with the use of a mutation testing tool
+Discussion: This mutation removes the condition *range == null* in the method’s first if statement and replaces it with *false*. This change effectively makes it so that the code within the if statement will never run as the statement will always have a false condition. Even so, this mutation is caught by the unit test *rangeIsNull()* which makes sure that when *range == null*, the function will always return a range with its upper and lower bound equal to *value*.
 
-## 2.2 TESTING TOOLS
+Method: *Range combineIgnoringNaN(Range range1, Range range2)*
 
-The only testing tool to be used in this part, aside from JUnit is Pitest [4], a mutation tool which includes a plug-in for Eclipse. Pitest is aimed at providing testers with a tool which provides automated generation of mutants, as well as running tests against those mutants.
+Mutant Generated: removed conditional - replaced equality check with true
 
-Pitest streamlines the process of creating mutants by providing a mutant generation engine based on many defined mutation operators. Pitest provides functionality to facilitate the creation of mutants as well as running unit tests on those mutants in order to calculate a mutation score.
+Status of Survival: Killed
 
-As discussed in the class, mutation operators in Java object-oriented software are generally of two types: method-level [1] and class-level [2]. Some of the tools (e.g. Pitest) by default employs only mutation operators at the method-level. You need to enable the class-level mutators before starting your tests.
+Killed By: *combineNoNullParams()*
 
-## 2.3 SYSTEM UNDER TEST
+Test Suite: RangeCombineIgnoringNaNTest.java
 
-Similar to assignments 2 and 3, the system to be tested for this part is JFreeChart [3]. To get started with the JFreeChart system, download the “JFreeChart v3.0.zip” file from assignment 4 folder and extract the entire archive to a known location.
+Discussion: This mutation removes the condition *range1 == null* in the method’s first if statement and replaces it with *true*. This change effectively makes it so that the code within the if statement will always run as the statement will always have a true condition. Even so, this mutation is caught by the unit test *combineNoNullParams()* which makes sure that when *range1 != null* and *range2 != null*, the function will always return a range with its upper and lower bound appropriate to its input test values, killing this mutant.
 
-## 2.4 FAMILIARIZATION
+Method: *Range expand(Range range, double lowerMargin, double upperMargin)*
 
-### 2.4.1 INSTALL Pitest
+Mutant Generated: removed call to org/jfree/chart/util/ParamChecks::nullNotPermitted 
 
-1.  In your Eclipse select Help, go to Eclips Marketpalce, and find Pitest Plugin by copy and paste the following link: https://marketplace.eclipse.org/content/pitclipse
+Status of Survival: Survived
 
-2.  Follow the installation process. Note: Run Eclipse “as administrator” in Windows, click on preferences, on the left side click on Pitest and then select Mutators, choose All mutators, and finally apply and close.
+Killed By: None
 
-![](./media/2-Preferances.png)
+Test Suite: RangeExpandTest.java
 
-![](./media/9-Pitest.png)
+Discussion: This mutation removes the *ParamChecks.nullNotPermitted()* call on the range argument that is passed. This call is present to ensure that the range that is passed in the argument is not null, however, once you remove this check, there is nothing present in the function which checks to see if the range is null or not. In the *RangeExpandTest* test suite, there is no unit test that tests the functionality of the function when a null range is passed. According to the source code (without the mutation), an invalid argument exception should be thrown, if any exception other than that is thrown, the test case should fail. Since our test suite did not have a unit test that tested for a) null range b) exceptions thrown from function, the mutant survived. 
 
-![](./media/1-Mutators.png)
+Method: *Range expandToInclude(Range range, double value)*
 
+Mutant Generated: replaced return value with null for org/jfree/data/Range::expandToInclude
 
-3.  If you could not find the Pitclipse in your Eclipse Marketplace please do the followings:
+Status of Survival: Killed
 
-    1.  Start Eclipse, then select Help \> Install New Software.
+Killed By: rangeIsNotNull
 
-    2.  Click Add, in the top-right corner.
+Test Suite: RangeExpandToIncludeTest.java
 
-    3.  Put Name: Pitclipse and Location: <http://eclipse.pitest.org/release/>
+Discussion: The mutant returns null in function *expandToInclude(Range range, double value)* instead of returning an object of range. However, this mutant is caught and killed by the test case rangeIsNotNull because of the assertEquals statement. This mutant was detected by this statement because the test case rangeIsNotNull was checking if an appropriate value was returned by the method expandToInclude, which means it was able to identify that a ‘bad’ value was being returned and thus failed, killing the mutant. 
 
-    4.  Press Add and follow the installation process
+Method: *boolean contains(double value)*
 
-Note that, Pitest by default employs only mutation operators at the method-level. **You need to enable the class-level mutators before starting your tests.** Follow these steps to select all mutators.
+Mutant Generated: changed conditional boundary
 
-**Figure 1 – Enabling mutators in Pitest**
+Status of Survival: Survived
 
+Killed By: None
 
-## 2.5 INSTRUCTIONS
+Test Suite: Range\_containsTest.java
 
-## 2.5.1 Mutation Testing
+Discussion: This mutation changes the second conditional statement in the return statement by changing value <= this.upper to value < this.upper. This mutation survived because the test suite for this method does not check what happens when the argument value is equal to the upper bound of the range. Since there is no unit test that asserts that even when the value is == to this.upper, the value, assuming the first conditional also holds true, the function should return true. However, the mutant passed since the unit tests do not consider the case where value == this.upper and only consider value  > than this.upper, thus this means mutant survived. 
 
-You should run Pitest on your own test suites `DataUtilitiesTest` and `RangeTest` from assignment 3.
+Method: *Range expand(Range range, double lowerMargin, double upperMargin)*
 
-### 2.5.2 Create a new Eclipse project
+Mutant Generated:removed call to org/jfree/data/Range::getLength
 
-Add the JFreeChart source code given in assignment 4 to your project. Add all libraries into your project. Add the given sample test codes (provided in this assignment) into your project.
+Status of Survival: Killed
 
-## 2.5.3 Add your own Test Suites from lab 3 into your new project.
+Killed By: RangeAppropriateValuesTest
 
-### 2.5.4 Run Mutation Testing on the sample test cases
+Test Suite: RangeExpandTest.java
 
-As a practice, run mutation tests on the test cases provided under `org.jfree.data.junit` in the test folder of _JFreeChart_Lab4_ project. Record all results. (Right click on the `org.jfree.data.junit` and then run as PIT Mutation Test)
+Discussion: This mutant removed the getLength() function call which would cause invalid lower and upper bound to be calculated in the function expand(). In the test suite RangeAppropriateValuesTest() tests to check if the current bounds have been evaluated from the return range result value. There are individual assert statements that check if the correct value for both the upper and lower bound was evaluated. Since the mutant caused the absence of the getLength function it would have given incorrect values for the bounds, which was caught by assert statements in RangeAppropriateValuesTest unit test case, thus mutant was killed. 
 
+Method: *boolean contains(double value)*
 
-1.  Note that in order to run mutation tools successfully, your test cases must pass (all green). For example, the `DataUtilitiesTes` test case has error in `org.jfree.data.junit`, running Pitest you will get exception. If there is any defect that is found by the tests (error/failure), they need to be fixed in the code before running the mutation tool.
+Mutant Generated: changed conditional boundary
 
-![](media/6-Run-Junit.png)
+Status of Survival: Survived
 
-![](media/7-Pass-Junit.png)
+Killed By: None
 
-![](media/8-PIT-Mutation-Test.png)
+Test Suite: Range\_containsTest.java
 
+Discussion: This mutation changes the first conditional statement in the return statement by changing value >= this.lower to value > this.lower. This mutation survived because the test suite for this method does not check what happens when the argument value is equal to the lower bound of the range. Since there is no unit test that asserts that even when the value is == to this.lower, the value, assuming the second conditional also holds true, the function should return true. However, the mutant passed since the unit tests do not consider the case where value == this.lower and target only value > than this.lower, thus this means mutant survived. 
 
-2.  Expect that mutation testing of some classes might take long time. Let the tool runs and do not terminate it until the test ends and you get the mutation testing reports.
+## **How Mutation Score was Improved (Design Strategy)**
+Our design strategy to increase the mutation score of our original test suite was centred around further enforcing the behaviour that the source code functions were intended to implement. In this way, testing suites were enhanced to check for correct service function regardless of the implementation of the current code (the mutation). We decided upon this strategy since it is much more appropriate for unit tests to test whether code is functioning correctly rather than creating tests based on their implementation when that implementation is constantly being modified by mutants.
 
+This testing strategy opposes what we had implemented for coverage testing where we only checked for all the paths of the given code that had been covered by the testing suites. By testing in this way, it soon became clear that the coverage testing strategy gives little to no focus on the intended system behaviour being implemented.
 
-> ![](./media/3-PIT-Summary.png)
+Clear examples of our new testing strategy’s implementation are tests for source code functions that made a call to the nullNotPermitted() function from the ParamChecks class. Functions calling this function intend to avoid having null objects in their implementation to avoid unintended errors in the computation of lines following after this call. This is enforced by the nullNotPermitted() by throwing an IllegalArgumentException when the checked object is null at that point in the code. Mutations of this implementation often remove this line and its functionality, allowing null values to propagate throughout the code. Our original test cases simply caught any exceptions thrown so that this line in the code would be confirmed to be covered. However, this ignores cases where other exceptions are thrown because of serious computational errors other than the IllegalArgumentException like NullPointerExceptions, which occur when actually accessing an object that is null. Our mutation testing strategy further specifies whether an exception thrown passes or fails its intended function. If an exception other than the IllegalArgumentException is thrown, this means that there is a serious computational error and thus the test would be deemed a failure. This kills the mutant and strengthens our test cases. Our other test suite enhancements follow this same strategy similarly, specifying the proper function of the SUT.
 
+With the use of this testing strategy, we were able to increase of mutation coverage by more than 10% for each class. The DataUtilities class increased its mutation coverage from 73% to 86% (13% increase). The Range class increased its mutation coverage from 73% to 84% (11% increase).
 
+## **Equivalent Mutants and Their Effect on Test Accuracy**
 
-> ![](./media/4-PIT-Mutations.png)
+Mutants help with testing test suites to determine whether or not they are able to detect changes in the SUT when there is improper behaviour. This is done by modifying the code in the SUT and checking to see if test cases have caught the discrepancies. If the change is caught by the test cases, it means that the mutant was killed. This is an effective strategy for testing to see whether the unit testing was performed correctly. However, equivalent mutants can have a negative effect on the validity of a mutation score when determining the accuracy of test suites.
 
+Equivalent mutants are mutants that perform the same behaviour on a specific method as other existing mutants. Since the mutation score for a mutation test is calculated based on how many mutants were caught, having unit tests catch equivalent mutants decreases this calculation’s accuracy. Mutants that are essentially the same should not both be considered as we are only concerned with different discrepancies in the SUT that are detected.
 
-> ![](./media/5-Console.png)
+To find equivalent mutants, we decided to use a method that involves taking a test case that kills a certain group of mutants and breaking down its components as much as possible with more test cases to distinguish the mutants in the group apart from each other. Using this method, we would be able to see if the mutants have any different behaviour apart from each other for that specific test case. If two mutants cannot be distinguished from one another, in theory, this would mean that these two mutants are equivalent, as they both exhibit the same behaviour.
 
-### 2.5.5 Run Mutation Testing on your own test cases
+To test this method of detecting equivalent mutants, we added test methods to the DataUtilities test suite, *DataUtilitiesEqualTest*, testing for the function *equal(double[][] a, double[][] b)* and the Range test suite, *RangeEqualsTest*, testing for the function *equals(Object obj)*. Extra tests were created from the test suite to attempt to distinguish between groups of mutants that were either all killed by the same unit test or all survived that unit test. These tests were also created based on the mutants of the selected groups. If the mutations did not exhibit any different behaviour from each other, the mutants were assumed to be the same.
 
-- Run mutation tests on your `Range` test classes from assignment 3. Record all results.
+The advantage of this method was its effectiveness when the distinguishing factors of groups of mutations were clear. This made their distinction straightforward and made it easy to spot equivalent mutations. Issues with this method arose when distinguishing factors were not clear as there was no proper way to tell whether or not the equivalent mutations had been caught. Overall, this method was fairly effective.
 
-- Run mutation tests on your `DataUtilities` test classes from lab 3. Record all results.
+## **Advantages and Disadvantages of Mutation Testing**
+We need mutation testing because it helps a user create effective test data in an interactive manner.  The goal is to have a strong test suite which will be able to catch typical faults so we seed bugs to find more bugs. Bugs can be seeded systematically (which are automated mutations), such as the mutations generated by PITEST. PITEST, the automation tool we used in this lab made small changes to the source code and produced a mutation log showing which of the generated mutations survived or which were killed. An advantage of this testing approach is that it is an indicator of the remaining bugs in the system and also that it helps the tester locate weakness in the source code which was never detected in coverage testing. For example, in the expand(Range range, double lowerMargin, double upperMargin) method in Range class, the test suite for that class never actually tested what happens when a null range object is passed. This was brought to our attention because the mutation removed the ParamChecks() call on the range object. The fact that we did not actually have a unit test case which tested for the scenario where the range argument object was null meant that our test suite was not as strong as the coverage report had led us to believe. Thus, as a result of mutation testing, we were able to strengthen our test suite. A disadvantage of mutation testing, specifically automated testing, it is hard to interpret the mutants. For instance, interpreting the ‘changed conditional boundary’ mutant was difficult. However we were able to use the PITEST documentation site to understand the mutants further. Not only that, some of the disadvantages of mutation testing is that some of the surviving mutants that were produced were a little too complex to interpret and kill. For example, the mutant ‘negated conditional’ which survived for the if(allowZeroCrossing) conditional in Range Shift method. It was almost impossible to kill this mutant because it was too complex to understand how to develop a unit test case that tested for that scenario. Thus, mutation testing does have its disadvantages, but its biggest benefit is that it strengthens test suites. 
 
-  - You might require to fix your test codes, if you find out that your test cases are not correct.
+## **SELENIUM Test Case Design Process**
 
-  - You might require to fix the source code, if your test code detects any defect.
+We went about our test cases in a procedural way. We considered the main functionalities the customers will need from the website: [www.sportchek.ca](http://www.sportchek.ca) in order to perform the major tasks the average customer would use. These functionalities include: adding and checking out, filtering by price, and searching by categories. We considered how many paths the average customer can take to achieve the functionality of the different GUI elements that are involved in these processes. This led us to having multiple test cases for certain scripts where many different paths or input data could be given in order to test that specific component functionality. The assertion checkpoints and unique descriptions of each test case/ test script can be seen below. (Total 8 test cases for 4 team members: 2 per member)
 
-- Analysis of at least 10 mutants produced by Pitest for the `Range` class, and how they are killed or not by your original test suite
+## **Test Script 1 - FilterPrice**
 
-### 2.5.6 Equivalent Mutants
+Assertion/Checkpoint: Filter Option Located at the top right corner, checkpoint at this step
 
-Try to come up with a way that you could automatically detect a few equivalent mutants in your experimentation, for classes `Range` and `DataUtilities`. If you think you have found a way, discuss it in your report, along with its benefits, disadvantages, and assumptions. Try to detect a few equivalent mutants manually in classes `Range` and `DataUtilities` (to do this, you will need to investigate the mutation logs generated by the tool).
-Report the process you followed for this part plus your findings and results in your lab report. Note that the number of equivalent mutants found is not as important as the understanding of how to detect them and the discussion of how you found them.
+This script FilterPrice.side tests the ‘Filter’ options on the [www.sportchek.ca](http://www.sportchek.ca). This script consists of only two test cases. This test case HighToLowInStockMensJacket uses the link Mens -> Winter Jackets, landing page to use the filter feature located on the top right corner. The test sets the filter to re-order the page from prices, high to low. This test case passes as the page was properly viewed and there are no other possible paths to this GUI page. The second test case RatingHighToLow uses the Mens -> Winter Jackets, landing page to use the filter feature located on the top right corner. The test sets the filter on the page to Rating High to Low, which reorders the page of winter jackets from the highest-rated jackets to the lowest rated jackets. This test case passes as the page was properly viewed and there are no other possible paths to this GUI page.
 
-### 2.5.7 Add More Test Cases to increase Mutation Score
+## **Test Script 2 - SelectionFilter**
 
-In this phase, we want to increase the mutation score. For each of the classes under mutation testing (`Range` and `DataUtilities`), measure the mutation score of your original test suites from assignment 3. Aim at increasing mutation scores for `Range` and `DataUtilities` each by at least 10%, e.g., if it is 55%, make it at least 65%. Discuss in your report the test cases that you had to add to increase the mutation score, and also how you designed them.
+Assertion/Checkpoint: Filter Selection Option Located at the left hand side of the page, checkpoint at this step [At each box]
 
-# 3 Part 2: GUI TESTING
+This script SelectionFilter.side tests the ‘Customization Filter’ options on the [www.sportchek.ca](http://www.sportchek.ca). This script consists of only two test cases. This test case FilterMenPumaRed uses the link Jersey’s and Fan Wear -> European Club Soccer, landing page to use the selection filter features located left side of the page. The test checks the Mens box, the Puma box and the color red box to filter the clothing with these parameters. This test case passes as the page was properly viewed and there are no other possible paths to this GUI page. The second test case FilterMenPumaRed uses the link Jersey’s and Fan Wear -> European Club Soccer, landing page to use the selection filter features located left side of the page. The test checks the Mens box, the Adidas box and the XL size box to filter the clothing with these parameters. This test case passes as the page was properly viewed and there are no other possible paths to this GUI page.
 
-## 3.1 OBJECTIVES
+## **Test Script 3 - Search**
 
-The main objective of this part of the assignment is to familiarize students with automated GUI testing and to become comfortable with some of the features that many record and replay testing tools have. Also, students will understand the differences between automated and manual GUI testing.
+Assertion/Checkpoint: Filter Selection Option Located at the left hand side of the page, checkpoint at this step [At each box]
 
-## 3.2 TESTING TOOLS
+This script Search.side tests the ‘Search’ options on the [www.sportchek.ca](http://www.sportchek.ca) website. This script consists of only a single test case. This test case is searchTennis. This test uses the search bar feature by searching for a “Tennis Racket” (typed in). A user may now search for products that are related to the typed keyboard and this test case passes as it relates products (tennis rackets) as searched for by the user.This is the only possible path to reach this GUI element and it has been determined to have past and functions perfectly.
 
-In this assignment, you will mainly use Selenium web-interface testing tool to test one of the following websites.
+## **Test Script 4 - SwitchPages**
 
-- Sportchek Page
+Assertion/Checkpoint: Page change options located at the bottom
 
-- Walmart Page
+This script SwitchPages.side tests the ‘Page number’ options on the [www.sportchek.ca](http://www.sportchek.ca) website. This script consists of only a single test case.  This test case is SwitchProductPages. After clicking the electronics -> Beats by Dre, user scrolls to bottom to find an arrow button to go the next page, which lists even more Beats by Dre products. This test passes, as it properly views the second page of items listed and allows users to view and add them into the cart if interested. This is the only possible path to reach this GUI element and it has been determined to have past and functions perfectly.
 
-- Best Buy Page
+## **Test Script 5 - LocateShippingMethodsFAQ**
 
-You will also explore this alternative tool: Sikulix (http://sikulix.com/quickstart/)
+Assertion/Checkpoint: Checkpoint located at the Shipping Methods link that's at the gym
 
-## 3.3 INSTRUCTIONS
+This script LocateShippingMethods.side tests the ‘Shipping methods’ options on the [www.sportchek.ca](http://www.sportchek.ca). This script consists of only a single test case. This test case is ClickAndFindShippingMethodsDescription. This test case uses the link at the bottom of the landing page called: “Help & FAQs”. Through this link the ‘Shipping methods’ option can be selected and all the available options can be viewed. This test case passes as the page was properly viewed and there are no other possible paths to this GUI page.
 
-1.  Make yourself familiarize with Selenium IDE plug-in and how to run record and replay (playback) with Selenium. You may use these recourses and/or others online.
+## **Test Script 6 - FeedbackTest**
 
-    1.  <http://www.seleniumhq.org/projects/ide/>
+Assertion/Checkpoint: Checkpoint located at the feedback icon on the right
 
-    1.  <http://toolsqa.com/selenium-ide-tutorial/>
+This script FeedbackTest.side tests the ‘Feedback’ options on the [www.sportchek.ca](http://www.sportchek.ca) website. This script consists of only a single test case. This test case is FeedbackSubmit. This test case uses the link at the right edge of the landing page called: “Feedback”. Through this link the ‘Please submit feedback’’ option can be selected and all the available options can be viewed. Here the customer can submit a rating out of 10 as well as written feedback for the service. This test case passes as the page was properly viewed and opened and any valid rating can be selected and any feedback can be written, there are no word limitations. This is the only possible path to reach this GUI element and it has been determined to have past and functions perfectly.
 
-    1.  <https://www.guru99.com/install-selenuim-ide.html>
+## **Test Script 7 - StoreLocator**
 
-1.  **Design** your UI test cases:
+Assertioin/Checkpoint: Checkpoint located top right at the store located
 
-    1.  UI test cases are sequence of events on the GUI/web interface.
+This script StoreLocator.side tests the ‘Prefered store’ and ‘store locator’ GUI elements options on the [www.sportchek.ca](http://www.sportchek.ca) website. This script consists of only a single test case. This test case is SetPreferredStore. This test case uses the store link at the tope right of the landing page called: “Your Store”. Through this link the ‘Prefered store’ option can be selected and our default location in our example was set to Calgary Alberta near the university of calgary. The default store is Westbrook SportChek however in our test case we can see that we have changed it to Chinook SportChek and this functionality performed correctly as the default store on our next load of the page was Chinook SportChek. Since this ‘change store’ functionality was the only functionality that could be tested on this GUI element, there was no need to write multiple test cases. Therefore this test has passed successfully.
 
-    2.  Each student must automate at least 2 **different functionalities of the application** under test. For example, Login, Purchase for an online shopping system, etc. (i.e., minimum 8 tests for teams with 4 students).
+## **Test Script 8 - VerifyCartAndCheckout**
 
-2.  **Automate** your test cases, using Selenium:
+Assertion/Checkpoint: Checkpoint located at the cart icon, locate top right and the checkout button
 
-    1. Each functionality must be tested with different possible test data. For example, Login with valid, invalid user.
+This script VerifyCartAndCheckout.side tests the view and checkout functionality of the items in the cart options on the [www.sportchek.ca](http://www.sportchek.ca). This script consists of only two test cases. The first test case is ViewCartItems. This test case uses the link at the top of the landing page in the shape of the cart. Through this link we are shown all the items that we have placed in the cart to make sure the quantity, size, color etc is just as we have selected. The second test case involves pressing the ‘checkout’ button in order to test the purchase functionality of the website of all the items in the cart GUI element. Both test cases passed which confirm that these GUI functionalities work properly.
 
-3.  **Verify** the output of the tests by adding verification check points.Verifications must be done automatically unless the tool does not support automated verification in that specific context, which in that case report that as disadvantages of the tool and design another test that can be automated.
+## **Advantages and Disadvantages of Selenium Vs. Sikulux**
 
-4.  **Execute** your recorded scripts to test the system.
+Selenium’s advantages provide a simple, easy to add (through extensions) IDE interface that allows new users (even new to programming) with a testing tool. This is achieved through its testing of web pages functionality that include not more than clicks or inputs with the keyboard, including search features, filter switches, and more specifically to our websites (such as Sport Chek that we tested in our lab) features like check out and add to cart. In addition, it allows a re-run of your inputs through scripts and is able to convert these inputs into java code that can be later referenced, modified and used.
 
-5.  **Document** defects at the end of your report file, if you find any during test automation (Note: Given applications are almost stable, do not expect to find many defects in these applications. It is acceptable that students report no defects in this assignment).
+Selenium’s disadvantages also come with its simplicity, as the capability of testing in depthly from a website's interface is limited to what is seen through the html. That being it is only limited to clicks and keyboard inputs and nothing more. Other disadvantages come with the extension and ide, itself. Perhaps due to unstable internet connection or other issues, the IDE may sometimes not register inputs, commands etc which can lead to a tedious and repetitive testing process. For example, when we tried to run the scripts on a different day, the process to run was tedious and slow due to unstable internet connection.
 
-6.  **Compare** Selenium IDE with an alternative tool (Sikulix). You do not have to run your tests with this tool. Only report your experience with the tool and pros and cons of it compared to Selenium.
+Sikulux’s advantages also provide a testing interface for users, that is more testing functionalities. Sikilux also provides image recognition in its testing, allowing for more in depth testing when compared to Selenium. It is also not a chrome extension meaning, it's not limited to internet websites but may also be used to test different applications located on a user’s desktop. Its open source nature allows it to be easily modified for better and more efficient use.
 
-7.  **Submission:**
+Sikulux’s disadvantages comes in the use of it in itself, that is it is susceptible and known to be slow, not work, crash etc. Further using the testing, its image recognition depends greatly on the clarity of the image and may not be able to recognize the same image if the image is somewhat blurry.
 
-    1.  Based on the experience that you had with Selenium and Sikulix, answer the questions in the template report file and submit it on GitHub.
+Both these tools have great features that uniquely provide benefits of their own to testing, a combination of both tools may lead to the most efficient testing process.
 
-    2.  Submit your Selenium test scripts and provide all required files for running your scripts. Your test scripts should not be computer dependent and must be run on your TAs computer.
+## **How the Teamwork was Divided/Managed**
 
-        1.  Your TA will ask you to demo your scripts in lab.
+Teamwork is a fundamental core part of software testing. In order to go through the test we read and did the preliminary parts of the mutation tests as a group (the setups in the initial stages of the lab). Specifically this involved the setups for Pitest and Silenium on each member’s computer. After this we proceeded to go through the sample test cases to run mutation tests in part 2.5.4 together as well. This was to ensure that everyone was up to par in the standard, format and overall understanding of mutation testing and being able to read and interpret the mutation report.  From there, we would proceed to have multiple group sessions where we worked individually on our own test cases to try to increase the number of mutants being killed. We implemented a similar methodology when we moved onto GUI testing with selenium. Each member was responsible for producing 2 test scripts testing two different functionalities after we all worked on one example test script together to understand the workings of selenium. Surprisingly no one faced any issues with selenium as the IDE was relatively lightweight and was as simple as installing a chrome extension.
 
-# 4 Evaluation Criteria
+A lesson learned throughout the entire process was that having more than one pair of eyes on an issue can provide faster and better solutions. For example, as we were first running through the mutation tests as a group, all of us had input our knowledge and ideas on how to set up the tests and improve upon tests from previous labs in order to catch more mutants.  It provided an efficient process into creating a test for some of the sample methods as well as filled any knowledge gaps that we had going into the lab, allowing us to work on our own split individual tests as well. Each person was responsible for writing test cases for at least two methods and documenting their strategy. Furthermore, collaboration on one or two test cases allowed us to formulate the best estimations on how to catch the most amount of mutants through trial and error and input from other team members. That way, when we went to individually work on trying to improve mutation coverages separately, we already knew the main things to target to increase the mutation coverage and did not have to spend a lot of time experimenting by ourselves.
 
-## 4.1 Demo (15%)
+Teamwork is incredibly important in software development as “teamwork makes the dream work.” Learning how to work in a team is imperative for engineers across all disciplines because it introduces them to varying new perspectives that only strengthen the final product. One of the key lessons that we learned about teamwork is that open communication, transparency and hard work are the foundations of any successful group. 
 
-The objectives for the demo are a) Preparing you for technical presentations, b) an early assessment of your work to give you a second chance to submit a high-quality report, and c) making sure everybody in the team contributes evenly.
+## **Difficulties Encountered, Challenges Overcome, and Lessons Learned**
 
-It is mandatory for all team members to attend the demo session and explain the TAs in the lab what they have done for this assignment. For this particular assignment, Lab8 is the demo day. You are expected to almost finish the assignment by the lab hour. All the team members should attend the lab. The TAs will go through the groups and each group must demonstrate one mutant (generated by PIT) that is killed by the original test suite and one that is not. Different student should demonstrate different mutants.
-Each student should also run a recorded test case with Selenium IDE.
+There were a few challenges and lessons that came about while performing through the assignment. The first was downloading and implementing the mutation coverage tool Pitest and getting it to work with our individual ide’s and computers. In this lab was the first time we observed a software/plugin that caused issues across all group member’s computers and caused us to work together and find different debugging solutions for each of our unique errors with Pitest. Next, came the testing part, to which we had discovered that in order for the mutation coverage to work efficiently, we had to modify or possibly delete certain test files from the combined zip folder we submitted for our previous lab. These factors combined caused a significant setback in pacing as we had to fix multiple errors before even beginning the mutation testing. After running our initial tests, we had discovered via the mutation report our percentages that we had covered were not as high as it could be for both classes of DataUtilities and Range(~73% each), and so we had to add new test cases to enhance our previous tests in order to catch even more variations of the input passed in by many mutants. It challenged us to add test cases for test files from both classes and we were able to see certain strategic similarities among methods in terms of specific things to target to kill mutants. As a result we were able to increase our mutation coverage for DataUtilities by 13% and increase mutation coverage for Range class by 10%. In addition we also faced some problems with Selenium IDE, not installation or usage problems but however we found that sometimes selenium was a bit buggy in the playback. There were occasions where certain events were not being played back properly even though they were scripted correctly. However these were rare occurrences and for the most part Selenium worked ok. 
 
-**NOTE1: Student who miss the demo session or are unable to demo what is detailed above are considered as less- contributors and may lose up to the entire assignment 3’s mark.**
+In conclusion, overcoming these challenges furthered our understanding of both mutation testing and GUI testing as a whole. It also increased our efficiency in writing tests with our goal being to catch the most amount of mutants as well as capture the major functionalities of any GUI in relation to it’s main user base. 
 
-**NOTE2: You still have time to further improve your test suite, after the demo session and before the deadline.**
+## **Comments and Feedback**
 
-## 4.2 Lab report and Test suites (85%)
-
-Students will be required to submit a report on their work in the lab as a group. To be consistent, please use the template markdown file “Assignment4-ReportTemplate.md” provided online under the Assignment 4 folder. If desired, feel free to rename the sections, as long as the headings are still descriptive and accurate.
-
-**NOTE3: include folder together with your report. One containing Part 1’s final test suite, another containing Selenium test scripts.**
-
-A portion of the grade for the lab report will be allocated to organization and clarity. The report marking scheme is as follows:
-
-| **Mutation Testing (50)**                                                                                                                                     |     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| Analysis of at least 10 mutants produced by Pitest for the `Range` class, and how they are killed or not by your original test suite                            | 10  |
-| All the statistics and the mutation score for each of the mutated classes (`Range` and `DataUtilities`) with each test suite class (original and the updated one) | 20  |
-| A discussion on the effect of equivalent mutants on mutation score accuracy including a discussion on how equivalent mutants could be detected                | 10  |
-| A discussion of how you improved the mutation score of the test suites. Your design strategy.                                                                 | 5   |
-| A discussion on the advantages and disadvantages of mutation testing                                                                                          | 5   |
-| **GUI Testing (33)**                                                                                                                                          |     |
-| Correctness and completeness of the Recorded test cases (at least 2 per group member)                                                                         | 10  |
-| Explain your test case design process                                                                                                                         | 5   |
-| Use of automated verification points in each script. If automated verification point is not used, provide valid reason                                        | 5   |
-| Use different test data per test. If not used, provide valid reason                                                                                           | 5   |
-| Discuss advantages and disadvantages of Selenium vs. Sikulix                                                                                                  | 8   |
-| **Other (2)**                                                                                                                                                 |     |
-| A discussion on how the team work/effort was divided and managed. Any lessons learned from your teamwork on this lab?                                         | 2   |
-
-# 5 REFERENCES
-
-[1] J. O. Yu-Seung Ma, "Description of Class Mutation Operators for Java,"2005\.(http://cs.gmu.edu/\~offutt/mujava/mutopsClass.pdf)
-
-[2] J. O. Yu-Seung Ma, "Description of Method-level Mutation Operators for Java," 2005. (http://cs.gmu.edu/\~offutt/mujava/mutopsMethod.pdf)
-
-[3] "JFreeChart," Internet: <http://www.jfree.org/jfreechart> [4] "Pitest," Internet: <http://pitest.org/>
+Overall, the lab detailed a simple yet insightful experience in mutation testing and GUI testing. The experience induced a healthy working environment that explored not only our previous knowledge of the course material but more importantly our ability to cooperate in group settings. We discovered in our first run-through of using mutation testing the application produced minor difficulties across various operating systems which was important to understand and resolve, as all team members took on a set of test cases to complete. However, going through the lab we were able to quickly overcome such difficulties, turning it into a smooth and informative session. An improvement that could be implemented in the lab document itself would be the adding of figures in sections 3.3 (GUI testing). Mutation testing also provided a more thorough insight into the application of these tests in the real world and helped us understand the magnitude of testing (considering we had to implement many extra tests in order to fulfil the required coverage percentages). The GUI testing provided an additional area of testing we had no prior knowledge of, and allowed for a lot of exploratory of the tools and its features. All in all, we found this lab easy to follow and an excellent introduction to mutation and GUI testing in all aspects.
