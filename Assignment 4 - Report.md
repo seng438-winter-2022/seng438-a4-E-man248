@@ -1,4 +1,17 @@
-﻿## **Introduction**
+# Course Title: Software Testing, Reliability, and Quality
+#### Course Code: SENG 438
+#### Assignment #: 3
+
+#### Group Number: 31
+#### Submission Date: 4/03/2022
+
+### Student Names:
+#### Aashik Ilangovan (30085993)
+#### Emmanuel Omari-Osei (30092729)
+#### Gibran Akmal (30094918)
+#### Priyanka Gautam (30091244)
+
+## **Introduction**
 
 The objective of this lab is to gain familiarity with both Mutation and GUI Testing. This lab is composed of two parts; the first’s focus being on Mutation testing and the second’s focus being on GUI testing. In part 1, we will understand why mutation testing is important and useful, and become familiar with the PITEST software tool. In the second part, the Selenium software tool is used to test the sportchek website. 
 
