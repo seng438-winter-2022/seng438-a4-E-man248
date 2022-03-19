@@ -1,4 +1,17 @@
-﻿## **Introduction**
+# Course Title: Software Testing, Reliability, and Quality
+#### Course Code: SENG 438
+#### Assignment #: 3
+
+#### Group Number: 31
+#### Submission Date: 4/03/2022
+
+### Student Names:
+#### Aashik Ilangovan (30085993)
+#### Emmanuel Omari-Osei (30092729)
+#### Gibran Akmal (30094918)
+#### Priyanka Gautam (30091244)
+
+## **Introduction**
 
 The objective of this lab is to gain familiarity with both Mutation and GUI Testing. This lab is composed of two parts; the first’s focus being on Mutation testing and the second’s focus being on GUI testing. In part 1, we will understand why mutation testing is important and useful, and become familiar with the PITEST software tool. In the second part, the Selenium software tool is used to test the sportchek website. 
 
@@ -152,49 +165,49 @@ We need mutation testing because it helps a user create effective test data in a
 
 We went about our test cases in a procedural way. We considered the main functionalities the customers will need from the website: [www.sportchek.ca](http://www.sportchek.ca) in order to perform the major tasks the average customer would use. These functionalities include: adding and checking out, filtering by price, and searching by categories. We considered how many paths the average customer can take to achieve the functionality of the different GUI elements that are involved in these processes. This led us to having multiple test cases for certain scripts where many different paths or input data could be given in order to test that specific component functionality. The assertion checkpoints and unique descriptions of each test case/ test script can be seen below. (Total 8 test cases for 4 team members: 2 per member)
 
-## **Test Script 1 - FilterPrice**
+### **Test Script 1 - FilterPrice**
 
 Assertion/Checkpoint: Filter Option Located at the top right corner, checkpoint at this step
 
 This script FilterPrice.side tests the ‘Filter’ options on the [www.sportchek.ca](http://www.sportchek.ca). This script consists of only two test cases. This test case HighToLowInStockMensJacket uses the link Mens -> Winter Jackets, landing page to use the filter feature located on the top right corner. The test sets the filter to re-order the page from prices, high to low. This test case passes as the page was properly viewed and there are no other possible paths to this GUI page. The second test case RatingHighToLow uses the Mens -> Winter Jackets, landing page to use the filter feature located on the top right corner. The test sets the filter on the page to Rating High to Low, which reorders the page of winter jackets from the highest-rated jackets to the lowest rated jackets. This test case passes as the page was properly viewed and there are no other possible paths to this GUI page.
 
-## **Test Script 2 - SelectionFilter**
+### **Test Script 2 - SelectionFilter**
 
 Assertion/Checkpoint: Filter Selection Option Located at the left hand side of the page, checkpoint at this step [At each box]
 
 This script SelectionFilter.side tests the ‘Customization Filter’ options on the [www.sportchek.ca](http://www.sportchek.ca). This script consists of only two test cases. This test case FilterMenPumaRed uses the link Jersey’s and Fan Wear -> European Club Soccer, landing page to use the selection filter features located left side of the page. The test checks the Mens box, the Puma box and the color red box to filter the clothing with these parameters. This test case passes as the page was properly viewed and there are no other possible paths to this GUI page. The second test case FilterMenPumaRed uses the link Jersey’s and Fan Wear -> European Club Soccer, landing page to use the selection filter features located left side of the page. The test checks the Mens box, the Adidas box and the XL size box to filter the clothing with these parameters. This test case passes as the page was properly viewed and there are no other possible paths to this GUI page.
 
-## **Test Script 3 - Search**
+### **Test Script 3 - Search**
 
 Assertion/Checkpoint: Filter Selection Option Located at the left hand side of the page, checkpoint at this step [At each box]
 
 This script Search.side tests the ‘Search’ options on the [www.sportchek.ca](http://www.sportchek.ca) website. This script consists of only a single test case. This test case is searchTennis. This test uses the search bar feature by searching for a “Tennis Racket” (typed in). A user may now search for products that are related to the typed keyboard and this test case passes as it relates products (tennis rackets) as searched for by the user.This is the only possible path to reach this GUI element and it has been determined to have past and functions perfectly.
 
-## **Test Script 4 - SwitchPages**
+### **Test Script 4 - SwitchPages**
 
 Assertion/Checkpoint: Page change options located at the bottom
 
 This script SwitchPages.side tests the ‘Page number’ options on the [www.sportchek.ca](http://www.sportchek.ca) website. This script consists of only a single test case.  This test case is SwitchProductPages. After clicking the electronics -> Beats by Dre, user scrolls to bottom to find an arrow button to go the next page, which lists even more Beats by Dre products. This test passes, as it properly views the second page of items listed and allows users to view and add them into the cart if interested. This is the only possible path to reach this GUI element and it has been determined to have past and functions perfectly.
 
-## **Test Script 5 - LocateShippingMethodsFAQ**
+### **Test Script 5 - LocateShippingMethodsFAQ**
 
 Assertion/Checkpoint: Checkpoint located at the Shipping Methods link that's at the gym
 
 This script LocateShippingMethods.side tests the ‘Shipping methods’ options on the [www.sportchek.ca](http://www.sportchek.ca). This script consists of only a single test case. This test case is ClickAndFindShippingMethodsDescription. This test case uses the link at the bottom of the landing page called: “Help & FAQs”. Through this link the ‘Shipping methods’ option can be selected and all the available options can be viewed. This test case passes as the page was properly viewed and there are no other possible paths to this GUI page.
 
-## **Test Script 6 - FeedbackTest**
+### **Test Script 6 - FeedbackTest**
 
 Assertion/Checkpoint: Checkpoint located at the feedback icon on the right
 
 This script FeedbackTest.side tests the ‘Feedback’ options on the [www.sportchek.ca](http://www.sportchek.ca) website. This script consists of only a single test case. This test case is FeedbackSubmit. This test case uses the link at the right edge of the landing page called: “Feedback”. Through this link the ‘Please submit feedback’’ option can be selected and all the available options can be viewed. Here the customer can submit a rating out of 10 as well as written feedback for the service. This test case passes as the page was properly viewed and opened and any valid rating can be selected and any feedback can be written, there are no word limitations. This is the only possible path to reach this GUI element and it has been determined to have past and functions perfectly.
 
-## **Test Script 7 - StoreLocator**
+### **Test Script 7 - StoreLocator**
 
 Assertioin/Checkpoint: Checkpoint located top right at the store located
 
 This script StoreLocator.side tests the ‘Prefered store’ and ‘store locator’ GUI elements options on the [www.sportchek.ca](http://www.sportchek.ca) website. This script consists of only a single test case. This test case is SetPreferredStore. This test case uses the store link at the tope right of the landing page called: “Your Store”. Through this link the ‘Prefered store’ option can be selected and our default location in our example was set to Calgary Alberta near the university of calgary. The default store is Westbrook SportChek however in our test case we can see that we have changed it to Chinook SportChek and this functionality performed correctly as the default store on our next load of the page was Chinook SportChek. Since this ‘change store’ functionality was the only functionality that could be tested on this GUI element, there was no need to write multiple test cases. Therefore this test has passed successfully.
 
-## **Test Script 8 - VerifyCartAndCheckout**
+### **Test Script 8 - VerifyCartAndCheckout**
 
 Assertion/Checkpoint: Checkpoint located at the cart icon, locate top right and the checkout button
 
