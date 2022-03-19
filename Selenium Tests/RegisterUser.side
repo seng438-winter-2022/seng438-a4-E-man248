@@ -1,0 +1,197 @@
+{
+  "id": "dc95a19f-a1c5-44c9-8f7a-173a1a5e60f5",
+  "version": "2.0",
+  "name": "RegisterUser",
+  "url": "https://www.sportchek.ca",
+  "tests": [{
+    "id": "50fa1c0a-939d-4a9f-8655-fc60d4e0d59d",
+    "name": "ValidRegister",
+    "commands": [{
+      "id": "189837e1-37a3-4e07-8986-5755f1bedbb4",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "daa05f21-0019-48ac-a1bd-4c0c85f8458e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x800",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bbc79c2a-faf6-49de-9f3b-8e1b15dc5cd6",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.full-image__img > img",
+      "targets": [
+        ["css=.full-image__img > img", "css:finder"],
+        ["xpath=//img[@alt='Under Armour Presents: The Joy of Training. Shop Now.']", "xpath:img"],
+        ["xpath=//main[@id='main-content']/div/div/div/a/span/picture/img", "xpath:idRelative"],
+        ["xpath=//picture/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "38205251-d149-4924-a45e-f50adff197ea",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.full-image__img > img",
+      "targets": [
+        ["css=.full-image__img > img", "css:finder"],
+        ["xpath=//img[@alt='Under Armour Presents: The Joy of Training. Shop Now.']", "xpath:img"],
+        ["xpath=//main[@id='main-content']/div/div[2]/div/a/span/picture/img", "xpath:idRelative"],
+        ["xpath=//picture/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "da56a59a-953c-4266-9ce4-3d86b3fd0fa7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.enterprise-account__button_register",
+      "targets": [
+        ["css=.enterprise-account__button_register", "css:finder"],
+        ["xpath=//li[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Register')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "01d74b5a-9d2c-475d-8ff5-74be8e4ea35c",
+      "comment": "",
+      "command": "click",
+      "target": "css=#register-site-login .gigya-input-text",
+      "targets": [
+        ["css=#register-site-login .gigya-input-text", "css:finder"],
+        ["xpath=(//input[@name='email'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='register-site-login']/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/div[2]/div[3]/div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "119770ea-882f-47a6-b68c-0a5c2937d261",
+      "comment": "",
+      "command": "type",
+      "target": "css=.gigya-valid",
+      "targets": [
+        ["css=.gigya-valid", "css:finder"],
+        ["xpath=(//input[@name='email'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='register-site-login']/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/div[2]/div[3]/div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "ultrarateda@gmail.com"
+    }, {
+      "id": "9b6447d1-c632-4e09-9d44-296bb74c6bc9",
+      "comment": "",
+      "command": "click",
+      "target": "css=#main-content > div:nth-child(1)",
+      "targets": [
+        ["css=#main-content > div:nth-child(1)", "css:finder"],
+        ["xpath=//main[@id='main-content']/div", "xpath:idRelative"],
+        ["xpath=//main/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "102c0237-ec07-4b97-a02e-bd8c8b1717e6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pwd-field-parent-container > .gigya-input-password",
+      "targets": [
+        ["css=.pwd-field-parent-container > .gigya-input-password", "css:finder"],
+        ["xpath=(//input[@name='password'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='password-row']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/div[2]/div[3]/div[3]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23bb9884-6bb2-4dd4-9853-ad52d50a7e9d",
+      "comment": "",
+      "command": "type",
+      "target": "css=.gigya-valid:nth-child(2)",
+      "targets": [
+        ["css=.gigya-valid:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='password'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='password-row']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/div[2]/div[3]/div[3]/div/div/input", "xpath:position"]
+      ],
+      "value": "Password!1"
+    }, {
+      "id": "c72ee231-7c27-4766-ae77-cb43ed8a6a98",
+      "comment": "",
+      "command": "click",
+      "target": "id=gigya-password-90574179967216050",
+      "targets": [
+        ["id=gigya-password-90574179967216050", "id"],
+        ["css=#gigya-password-90574179967216050", "css:finder"],
+        ["xpath=//input[@id='gigya-password-90574179967216050']", "xpath:attributes"],
+        ["xpath=//div[@id='password-row']/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/div[2]/div[3]/div[3]/div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "79c7a8e3-5057-42c5-bef2-7a17e2e94862",
+      "comment": "",
+      "command": "type",
+      "target": "id=gigya-password-90574179967216050",
+      "targets": [
+        ["id=gigya-password-90574179967216050", "id"],
+        ["css=#gigya-password-90574179967216050", "css:finder"],
+        ["xpath=//input[@id='gigya-password-90574179967216050']", "xpath:attributes"],
+        ["xpath=//div[@id='password-row']/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/div[2]/div[3]/div[3]/div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Password!1"
+    }, {
+      "id": "0816c521-252d-4b4c-b1d1-121173533507",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ciam-consent-visible > .gigya-label",
+      "targets": [
+        ["css=.ciam-consent-visible > .gigya-label", "css:finder"],
+        ["xpath=//div[@id='register-site-login']/div[5]/label", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/div[2]/div[3]/div[5]/label", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "00d8629e-3911-47dc-b2d4-14ff69230476",
+      "comment": "",
+      "command": "click",
+      "target": "css=#register-site-login .gigya-input-submit",
+      "targets": [
+        ["css=#register-site-login .gigya-input-submit", "css:finder"],
+        ["xpath=//input[@value='CREATE TRIANGLE ID']", "xpath:attributes"],
+        ["xpath=//div[@id='register-site-login']/div[10]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/div[2]/div[3]/div[10]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4cdee11-a913-4fd9-90ce-e84ba7d640a1",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=#register-site-login .gigya-input-submit",
+      "targets": [
+        ["css=#register-site-login .gigya-input-submit", "css:finder"],
+        ["xpath=//input[@value='CREATE TRIANGLE ID']", "xpath:attributes"],
+        ["xpath=//div[@id='register-site-login']/div[10]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/div[2]/div[3]/div[10]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e374d79-8eda-4ecb-9920-ec82e5b9fe2e",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,145.60000610351562)",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "19369cfd-e8b6-43ec-bca1-7bad14a43b21",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.sportchek.ca/"],
+  "plugins": []
+}

@@ -1,0 +1,375 @@
+{
+  "id": "be5e2727-6dfb-456c-b47b-35e0bd65c2d7",
+  "version": "2.0",
+  "name": "SelectionFilter",
+  "url": "https://www.sportchek.ca",
+  "tests": [{
+    "id": "6fc07352-2797-49ab-af16-bce2f208e779",
+    "name": "FilterMenPumaRed",
+    "commands": [{
+      "id": "f05b1be5-e80d-48a1-aaf0-57806d8abfb9",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7ec097a4-32f0-4b0d-9f35-c2c510eca159",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x801",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "595e79e2-b3ac-4cef-8993-a2f533f7e675",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Electronics",
+      "targets": [
+        ["linkText=Electronics", "linkText"],
+        ["css=.page-nav__item:nth-child(8) > .page-nav__link", "css:finder"],
+        ["xpath=//a[contains(@href, 'categories/electronics')]", "xpath:href"],
+        ["xpath=//li[8]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Electronics')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f544b1f0-205b-4d08-b99d-da91982d4753",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=Electronics",
+      "targets": [
+        ["linkText=Electronics", "linkText"],
+        ["css=.page-nav__item:nth-child(8) > .page-nav__link", "css:finder"],
+        ["xpath=//a[contains(@href, 'categories/electronics')]", "xpath:href"],
+        ["xpath=//li[8]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Electronics')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d72f626-d195-41b1-8092-a442dac9c089",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Jerseys & Fan Wear",
+      "targets": [
+        ["linkText=Jerseys & Fan Wear", "linkText"],
+        ["css=.page-nav__item:nth-child(9) > .page-nav__link", "css:finder"],
+        ["xpath=//a[contains(@href, 'categories/fan-shop')]", "xpath:href"],
+        ["xpath=//li[9]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Jerseys & Fan Wear')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e97b241f-c76e-420c-8140-61e2533f9251",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=Jerseys & Fan Wear",
+      "targets": [
+        ["linkText=Jerseys & Fan Wear", "linkText"],
+        ["css=.page-nav__item:nth-child(9) > .page-nav__link", "css:finder"],
+        ["xpath=//a[contains(@href, 'categories/fan-shop')]", "xpath:href"],
+        ["xpath=//li[9]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Jerseys & Fan Wear')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c896f3f0-a4ea-4711-861a-7e589a4537ff",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.page-nav__item:nth-child(9) .main-menu__text",
+      "targets": [
+        ["css=.page-nav__item:nth-child(9) .main-menu__text", "css:finder"],
+        ["xpath=//li[9]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Jerseys & Fan Wear')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "73ebf859-7854-4fd2-9606-42091509b668",
+      "comment": "",
+      "command": "click",
+      "target": "css=.page-nav__item:nth-child(9) .main-menu__text",
+      "targets": [
+        ["css=.page-nav__item:nth-child(9) .main-menu__text", "css:finder"],
+        ["xpath=//li[9]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Jerseys & Fan Wear')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ada626d-747f-4ce3-a8a2-8b2b9fb905b5",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.page-nav__link_active > .main-menu__text",
+      "targets": [
+        ["css=.page-nav__link_active > .main-menu__text", "css:finder"],
+        ["xpath=//li[9]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Jerseys & Fan Wear')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6f321cd-886d-4198-9aa7-d816b89566c8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.page-nav__section:nth-child(4) > .page-nav__link_see-all",
+      "targets": [
+        ["css=.page-nav__section:nth-child(4) > .page-nav__link_see-all", "css:finder"],
+        ["xpath=(//a[contains(text(),'See All Products')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/categories/fan-shop/european-club-soccer.all.html')])[2]", "xpath:href"],
+        ["xpath=//div[4]/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a24057de-e589-44f3-a01e-795e9865f853",
+      "comment": "",
+      "command": "click",
+      "target": "css=.facets-side__list-item:nth-child(1) .facets-side__item:nth-child(1) .checkbox",
+      "targets": [
+        ["css=.facets-side__list-item:nth-child(1) .facets-side__item:nth-child(1) .checkbox", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[2]/div/ul/li/div/div/label/span", "xpath:idRelative"],
+        ["xpath=//li/div/div/label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "04d0ab1d-0415-4688-890a-a4eb005449a9",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,167.1999969482422)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5d1dbea8-e40b-42bc-b2d7-d675563a3b4a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.facets-side__list-item:nth-child(3) .facets-side__item:nth-child(4) .checkbox",
+      "targets": [
+        ["css=.facets-side__list-item:nth-child(3) .facets-side__item:nth-child(4) .checkbox", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[2]/div/ul/li[3]/div/div[4]/label/span", "xpath:idRelative"],
+        ["xpath=//div[4]/label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf592f3c-22b1-46f9-af79-e48ff831aea1",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,449.6000061035156)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34c8e9d5-d352-4d7a-8565-09914e169def",
+      "comment": "",
+      "command": "click",
+      "target": "css=.facets-side__items-colour:nth-child(4) > .facets-side__items-colour-box",
+      "targets": [
+        ["css=.facets-side__items-colour:nth-child(4) > .facets-side__items-colour-box", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[2]/div/ul/li[5]/div/label[4]/span", "xpath:idRelative"],
+        ["xpath=//label[4]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ee9a75c-3d90-411b-8b0b-831daadbeb54",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,820)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de1a2def-65e5-4c64-b570-d93088ed9151",
+      "comment": "",
+      "command": "click",
+      "target": "css=.product-image-wrap:nth-child(2) .product-grid-image",
+      "targets": [
+        ["css=.product-image-wrap:nth-child(2) .product-grid-image", "css:finder"],
+        ["xpath=//img[@alt=\"AC Milan 2018/19 Puma Men's Home Jersey - Red\"]", "xpath:img"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[3]/div/ul/li/div/div/div[2]/a/img", "xpath:idRelative"],
+        ["xpath=//li/div/div/div[2]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ea45311-1ab3-4514-9033-7bbe0a8a3a1b",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,14.399999618530273)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3a3cf62b-f7ed-49d6-add4-c417bce497be",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,179.1999969482422)",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "126d118f-a549-40ec-8f1c-36a1db6b359e",
+    "name": "FilterMenAddidasXl",
+    "commands": [{
+      "id": "aba492e0-2c78-4fc7-9ed5-18cb0b661ec7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "81de570c-5686-49b0-b87f-3a5f8231ad10",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x801",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "85e580bf-af0d-44b5-90a5-00a9c1df781a",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.page-nav__item:nth-child(9) .main-menu__text",
+      "targets": [
+        ["css=.page-nav__item:nth-child(9) .main-menu__text", "css:finder"],
+        ["xpath=//li[9]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Jerseys & Fan Wear')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd433946-1009-4216-897d-68e838234e62",
+      "comment": "",
+      "command": "click",
+      "target": "css=.page-nav__item:nth-child(9) .main-menu__text",
+      "targets": [
+        ["css=.page-nav__item:nth-child(9) .main-menu__text", "css:finder"],
+        ["xpath=//li[9]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Jerseys & Fan Wear')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2eccc669-50f1-4dd4-a9c3-58ca91d30edc",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.page-nav__link_active > .main-menu__text",
+      "targets": [
+        ["css=.page-nav__link_active > .main-menu__text", "css:finder"],
+        ["xpath=//li[9]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Jerseys & Fan Wear')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d85907bb-d4aa-419a-ac95-612301a1f2cf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.page-nav__section:nth-child(4) > .page-nav__link_see-all",
+      "targets": [
+        ["css=.page-nav__section:nth-child(4) > .page-nav__link_see-all", "css:finder"],
+        ["xpath=(//a[contains(text(),'See All Products')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/categories/fan-shop/european-club-soccer.all.html')])[2]", "xpath:href"],
+        ["xpath=//div[4]/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b3b241f-2642-4c27-a945-da910f17b40b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.facets-side__list-item:nth-child(1) .facets-side__item:nth-child(1) > .facets-side__label",
+      "targets": [
+        ["css=.facets-side__list-item:nth-child(1) .facets-side__item:nth-child(1) > .facets-side__label", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[2]/div/ul/li/div/div/label", "xpath:idRelative"],
+        ["xpath=//li/div/div/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Men (96)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "81a4a382-bf76-426d-97bc-a35b39f9bd35",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,228)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b3b8772d-a121-4db0-8cdd-89e3bf19bb88",
+      "comment": "",
+      "command": "click",
+      "target": "css=.facets-side__category-label",
+      "targets": [
+        ["css=.facets-side__category-label", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[2]/div/ul/li[2]/div/div[2]/label", "xpath:idRelative"],
+        ["xpath=//li[2]/div/div[2]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'European Club Soccer (97)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "49a9b382-d03b-4e60-ae85-0fd550f42e74",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,358.3999938964844)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e55157e6-7d28-4148-968f-37fc817b260e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.facets-side__list-item:nth-child(3) .facets-side__item:nth-child(1) .checkbox",
+      "targets": [
+        ["css=.facets-side__list-item:nth-child(3) .facets-side__item:nth-child(1) .checkbox", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[2]/div/ul/li[3]/div/div/label/span", "xpath:idRelative"],
+        ["xpath=//li[3]/div/div/label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0afb2e1c-dbaa-4813-bef8-6d3da3a05648",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,432)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3f7598f5-19a9-4f28-a548-ffc18376beb1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.facets-side__list-item_columns .facets-side__item:nth-child(6) .checkbox",
+      "targets": [
+        ["css=.facets-side__list-item_columns .facets-side__item:nth-child(6) .checkbox", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[2]/div/ul/li[4]/div/div[6]/label/span", "xpath:idRelative"],
+        ["xpath=//li[4]/div/div[6]/label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ae96784-8f21-4073-abc0-f7dc462ced43",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,717.5999755859375)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de4c25d2-4f8c-4e02-b03f-c890cab65ac9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.product-grid__list-item:nth-child(1) .product-grid-image",
+      "targets": [
+        ["css=.product-grid__list-item:nth-child(1) .product-grid-image", "css:finder"],
+        ["xpath=//img[@alt='FC Bayern Munich adidas 2021/22 Replica Home Jersey - Red']", "xpath:img"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[3]/div/ul/li/div/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//li/div/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b6b4885-e7d4-43d3-8b19-5e1502f210f0",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,2.4000000953674316)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a06c8672-f141-4e30-b95c-7c3516df34f7",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,207.1999969482422)",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "cea6bf94-8124-4626-b653-59042d888682",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6fc07352-2797-49ab-af16-bce2f208e779"]
+  }],
+  "urls": ["https://www.sportchek.ca/"],
+  "plugins": []
+}

@@ -1,0 +1,102 @@
+{
+  "id": "5e8aa257-6d19-4980-9f0a-ed4f0a6a6d3c",
+  "version": "2.0",
+  "name": "Electronics",
+  "url": "https://www.sportchek.ca",
+  "tests": [{
+    "id": "1308a920-afa6-4360-941d-4c7c3331913c",
+    "name": "SwitchProductPages",
+    "commands": [{
+      "id": "efee446b-8735-45af-a9ca-27747ab60501",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "94420ee8-26dd-4af7-8c01-755fe0a2bd3e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.page-nav__item:nth-child(8) .main-menu__text",
+      "targets": [
+        ["css=.page-nav__item:nth-child(8) .main-menu__text", "css:finder"],
+        ["xpath=//li[8]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Electronics')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e315ec5-6382-4a44-b634-7d021d56bb59",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Beats by Dre",
+      "targets": [
+        ["linkText=Beats by Dre", "linkText"],
+        ["css=.page-nav__section:nth-child(7) .page-nav__item:nth-child(2) > .page-nav__link", "css:finder"],
+        ["xpath=//a[contains(text(),'Beats by Dre')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/categories/electronics/headphones-speakers/beats-by-dre-headphones.html')]", "xpath:href"],
+        ["xpath=//div[7]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Beats by Dre')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "24e410dc-b0eb-4ab3-95e6-8f227c3057e7",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.product-grid__list-item:nth-child(1) .product-grid-image",
+      "targets": [
+        ["css=.product-grid__list-item:nth-child(1) .product-grid-image", "css:finder"],
+        ["xpath=//img[@alt='Beats Fit Pro True Wireless Earbuds - Beats Black']", "xpath:img"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[3]/div/ul/li/div/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec4d86cf-67d4-49f5-8690-79884c691a1c",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,1275.199951171875)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "552f0383-028f-4463-8e2a-1b0df95dc07b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pagination__control_right",
+      "targets": [
+        ["css=.pagination__control_right", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[3]/div/div[2]/div/nav/ul/li[4]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/nav/ul/li[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec93c20a-a1b6-4f34-a10c-6f11206cb002",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,2804)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "54fa7cb1-06a8-4105-bfb2-58c7f0d3ef73",
+      "comment": "",
+      "command": "click",
+      "target": "css=.product-grid__list-item:nth-child(4) .product-grid-image",
+      "targets": [
+        ["css=.product-grid__list-item:nth-child(4) .product-grid-image", "css:finder"],
+        ["xpath=//img[@alt='Powerbeats Pro Totally Wireless Earphones - Ivory']", "xpath:img"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[3]/div/ul/li[4]/div/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//li[4]/div/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "dff12a14-fe05-4257-850a-f1c25e204bb6",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.sportchek.ca/"],
+  "plugins": []
+}

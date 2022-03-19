@@ -1,0 +1,211 @@
+{
+  "id": "29cd8690-ace9-4805-8195-ccd4a71ecc4b",
+  "version": "2.0",
+  "name": "FeedbackTest",
+  "url": "https://www.sportchek.ca",
+  "tests": [{
+    "id": "9f7f47fa-3309-4430-8634-f75c174ad48c",
+    "name": "FeedbackSubmit",
+    "commands": [{
+      "id": "825f35ea-bde3-4cec-a68b-2725c132531e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "64dd693f-7286-4daf-b550-7692b991d48c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x801",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9cd76b5f-d44e-4a6a-9346-1322bf8613f7",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.page-nav__item:nth-child(12) .main-menu__text",
+      "targets": [
+        ["css=.page-nav__item:nth-child(12) .main-menu__text", "css:finder"],
+        ["xpath=//li[12]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Deals & Features')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "06764ceb-a578-45a8-b116-237b28b7c31d",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.page-nav__item:nth-child(12) .main-menu__text",
+      "targets": [
+        ["css=.page-nav__item:nth-child(12) .main-menu__text", "css:finder"],
+        ["xpath=//li[12]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Deals & Features')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0242fa94-33da-4271-8018-117e4710423f",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.header-cart__text",
+      "targets": [
+        ["css=.header-cart__text", "css:finder"],
+        ["xpath=//div[6]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f007ccb-1400-4c7e-ae97-7e030b83b037",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.header-cart__text",
+      "targets": [
+        ["css=.header-cart__text", "css:finder"],
+        ["xpath=//div[6]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "29f65c5f-683d-4798-98a3-500f079fb468",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Footwear",
+      "targets": [
+        ["linkText=Footwear", "linkText"],
+        ["css=.page-nav__item:nth-child(6) > .page-nav__link", "css:finder"],
+        ["xpath=//a[contains(@href, 'categories/shoes')]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Footwear')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "399b5997-2418-42b2-a4e4-acf071382b1f",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=Footwear",
+      "targets": [
+        ["linkText=Footwear", "linkText"],
+        ["css=.page-nav__item:nth-child(6) > .page-nav__link", "css:finder"],
+        ["xpath=//a[contains(@href, 'categories/shoes')]", "xpath:href"],
+        ["xpath=//li[6]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Footwear')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "078a6dd0-9a3e-47e6-8def-09349a17ed48",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.full-image__img > img",
+      "targets": [
+        ["css=.full-image__img > img", "css:finder"],
+        ["xpath=//img[@alt='Under Armour Presents: The Joy of Training. Shop Now.']", "xpath:img"],
+        ["xpath=//main[@id='main-content']/div/div[2]/div/a/span/picture/img", "xpath:idRelative"],
+        ["xpath=//picture/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e97eb98-26dc-4782-8feb-048787897292",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.full-image__img > img",
+      "targets": [
+        ["css=.full-image__img > img", "css:finder"],
+        ["xpath=//img[@alt='Under Armour Presents: The Joy of Training. Shop Now.']", "xpath:img"],
+        ["xpath=//main[@id='main-content']/div/div[2]/div/a/span/picture/img", "xpath:idRelative"],
+        ["xpath=//picture/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "22bd385a-5fd1-460b-99ad-50259ece4566",
+      "comment": "",
+      "command": "click",
+      "target": "css=.kampyle_button-text",
+      "targets": [
+        ["css=.kampyle_button-text", "css:finder"],
+        ["xpath=//button[@id='nebula_div_btn']/div[2]", "xpath:idRelative"],
+        ["xpath=//button/div[2]", "xpath:position"],
+        ["xpath=//div[contains(.,'Feedback')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd1a0e8a-7be5-46e2-bf61-e04e9d7d2c48",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "index=11",
+      "targets": [
+        ["index=11"]
+      ],
+      "value": ""
+    }, {
+      "id": "c49d61ce-722c-4a30-8e01-68291cefe7eb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.seven > .native-display-value-in-rating",
+      "targets": [
+        ["css=.seven > .native-display-value-in-rating", "css:finder"],
+        ["xpath=//div[@id='wrapper_a37c-2def-d507-0a84-fdce-23b7-651c-9909']/div/neb-rating/div/form/span/span[8]/label/span", "xpath:idRelative"],
+        ["xpath=//span[8]/label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b65748c7-19d5-4399-86e8-98168eb819ef",
+      "comment": "",
+      "command": "click",
+      "target": "id=Page 13",
+      "targets": [
+        ["id=Page 13", "id"],
+        ["css=#Page\\ 13", "css:finder"],
+        ["xpath=//textarea[@id='Page 13']", "xpath:attributes"],
+        ["xpath=//div[@id='wrapper_7a13-9b8e-5ce9-205c-ac4f-3c22-3962-a677']/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5acfa3f4-63f6-41d1-9423-5bef1553d41f",
+      "comment": "",
+      "command": "type",
+      "target": "id=Page 13",
+      "targets": [
+        ["id=Page 13", "id"],
+        ["css=#Page\\ 13", "css:finder"],
+        ["xpath=//textarea[@id='Page 13']", "xpath:attributes"],
+        ["xpath=//div[@id='wrapper_7a13-9b8e-5ce9-205c-ac4f-3c22-3962-a677']/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Selenium Testing"
+    }, {
+      "id": "6b879a78-ab55-448f-8c91-5f7c453fbad8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit-btn",
+      "targets": [
+        ["css=.submit-btn", "css:finder"],
+        ["xpath=//div[@id='liveForm']/div/div[2]/neb-form-footer/div/div/div/div/div/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6520f37-6988-43c2-a41d-a54d71bb1347",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//div[@id='liveForm']/div/div[2]/div/div/div/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Close')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "20d2a7fb-ae3e-4079-9117-8e1fe40afe2c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["9f7f47fa-3309-4430-8634-f75c174ad48c"]
+  }],
+  "urls": ["https://www.sportchek.ca/"],
+  "plugins": []
+}

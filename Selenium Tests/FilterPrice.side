@@ -1,0 +1,276 @@
+{
+  "id": "235dfd6b-ac54-4177-a5fd-3b479ed29cd7",
+  "version": "2.0",
+  "name": "FilterPrice",
+  "url": "https://www.sportchek.ca",
+  "tests": [{
+    "id": "8282392a-7c05-4e1d-9643-e8f344543a86",
+    "name": "LowToHighInStockMensJacket",
+    "commands": [{
+      "id": "791d7706-63dd-427f-8621-f9b76c632321",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "85e0d01b-dcbd-486a-a07c-735066a4bee0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x801",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "23f90bcc-36d9-43ce-97ff-df4885184d22",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.full-image__img > img",
+      "targets": [
+        ["css=.full-image__img > img", "css:finder"],
+        ["xpath=//img[@alt='Under Armour Presents: The Joy of Training. Shop Now.']", "xpath:img"],
+        ["xpath=//main[@id='main-content']/div/div/div/a/span/picture/img", "xpath:idRelative"],
+        ["xpath=//picture/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "11e71849-4a52-4783-9ce5-aa86e26339ea",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.full-image__img > img",
+      "targets": [
+        ["css=.full-image__img > img", "css:finder"],
+        ["xpath=//img[@alt='Under Armour Presents: The Joy of Training. Shop Now.']", "xpath:img"],
+        ["xpath=//main[@id='main-content']/div/div/div/a/span/picture/img", "xpath:idRelative"],
+        ["xpath=//picture/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "13425bd3-fbe7-40ec-81e8-cbb234a7ff49",
+      "comment": "",
+      "command": "click",
+      "target": "css=.page-nav__item:nth-child(4) .main-menu__text",
+      "targets": [
+        ["css=.page-nav__item:nth-child(4) .main-menu__text", "css:finder"],
+        ["xpath=//li[4]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Men')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "917de793-1922-4fd2-adf3-cc29ec721889",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Winter Jackets",
+      "targets": [
+        ["linkText=Winter Jackets", "linkText"],
+        ["css=.page-nav__section:nth-child(2) .page-nav__item:nth-child(1) > .page-nav__link", "css:finder"],
+        ["xpath=//a[contains(text(),'Winter Jackets')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/categories/men/jackets-coats-vests/winter-jackets.html')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Winter Jackets')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3066b692-ec9f-40a6-9170-17c5b384a4b2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.shop-my-store__toggle-slider",
+      "targets": [
+        ["css=.shop-my-store__toggle-slider", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/div[3]/div/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce523675-5f61-4d28-8527-8b7de81f0e2b",
+      "comment": "",
+      "command": "click",
+      "target": "css=select",
+      "targets": [
+        ["css=select", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/div[2]/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d903b67b-3bb9-453f-b4bd-9d984eefd68c",
+      "comment": "",
+      "command": "select",
+      "target": "css=select",
+      "targets": [],
+      "value": "label=Price Low to High"
+    }, {
+      "id": "51ca1640-7c6a-4df1-907b-d766acd54f50",
+      "comment": "",
+      "command": "click",
+      "target": "css=.product-grid__list-item:nth-child(1) .product-grid-image",
+      "targets": [
+        ["css=.product-grid__list-item:nth-child(1) .product-grid-image", "css:finder"],
+        ["xpath=//img[@alt=\"Columbia Men's Trek Cool Base Pullover Hoodie - Navy/Indigo\"]", "xpath:img"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[3]/div/ul/li/div/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//li/div/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ec7d50b-fcb5-4185-af8b-f7d97753cc94",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,15.199999809265137)",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "6967c8c1-1d9b-4307-aeb9-ca477a20f5fa",
+    "name": "RatingHighToLow",
+    "commands": [{
+      "id": "8da9aa19-d082-4e96-9366-2aed77de5366",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6e982e7-b8a2-4535-855b-b436caaa989c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x802",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f07f7817-3604-4136-aff0-eafd2539c6a5",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.page-nav__item:nth-child(4) .main-menu__text",
+      "targets": [
+        ["css=.page-nav__item:nth-child(4) .main-menu__text", "css:finder"],
+        ["xpath=//li[4]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Men')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4c365ca-07b9-4b69-b550-fdab516ca585",
+      "comment": "",
+      "command": "click",
+      "target": "css=.page-nav__item:nth-child(4) .main-menu__text",
+      "targets": [
+        ["css=.page-nav__item:nth-child(4) .main-menu__text", "css:finder"],
+        ["xpath=//li[4]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Men')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d8c1eb6d-99b4-49a3-b4a6-bd6c61a7f817",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.page-nav__link_active > .main-menu__text",
+      "targets": [
+        ["css=.page-nav__link_active > .main-menu__text", "css:finder"],
+        ["xpath=//li[4]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Men')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7341da85-4860-4200-b777-fcadafa87979",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Winter Jackets",
+      "targets": [
+        ["linkText=Winter Jackets", "linkText"],
+        ["css=.page-nav__section:nth-child(2) .page-nav__item:nth-child(1) > .page-nav__link", "css:finder"],
+        ["xpath=//a[contains(text(),'Winter Jackets')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/categories/men/jackets-coats-vests/winter-jackets.html')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Winter Jackets')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a201e49-83e8-4684-a794-8f643acb4cac",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=Winter Jackets",
+      "targets": [
+        ["linkText=Winter Jackets", "linkText"],
+        ["css=.page-nav__section:nth-child(2) .page-nav__item:nth-child(1) > .page-nav__link", "css:finder"],
+        ["xpath=//a[contains(text(),'Winter Jackets')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/categories/men/jackets-coats-vests/winter-jackets.html')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Winter Jackets')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbeca672-cd8d-4917-97b3-5406fb12a468",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Winter Jackets",
+      "targets": [
+        ["linkText=Winter Jackets", "linkText"],
+        ["css=.page-nav__section:nth-child(2) .page-nav__item:nth-child(1) > .page-nav__link", "css:finder"],
+        ["xpath=//a[contains(text(),'Winter Jackets')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/categories/men/jackets-coats-vests/winter-jackets.html')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Winter Jackets')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "047fb3fe-c50a-4253-b0b2-d278f241c161",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,34.400001525878906)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb814c76-7f65-427c-a6ee-6b1efbd79e92",
+      "comment": "",
+      "command": "click",
+      "target": "css=select",
+      "targets": [
+        ["css=select", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/div[2]/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4bb9d7f1-21bd-4dc7-9172-025892b0da8f",
+      "comment": "",
+      "command": "select",
+      "target": "css=select",
+      "targets": [],
+      "value": "label=Rating High to Low"
+    }, {
+      "id": "20740b42-ff5a-4e4f-9745-f1004cb6b068",
+      "comment": "",
+      "command": "click",
+      "target": "css=.product-grid__list-item:nth-child(1) .product-grid-image",
+      "targets": [
+        ["css=.product-grid__list-item:nth-child(1) .product-grid-image", "css:finder"],
+        ["xpath=//img[@alt=\"Woods Men's Elias Arctic Down Parka - Black\"]", "xpath:img"],
+        ["xpath=//main[@id='main-content']/div/div[4]/div[3]/div/ul/li/div/div/div/a/img", "xpath:idRelative"],
+        ["xpath=//li/div/div/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "55a370b0-b898-42e4-9847-712a17cefa29",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,246.39999389648438)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "571b9939-777d-4839-82e1-2d90b3321ef8",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,216.8000030517578)",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "c3e0286b-8d04-4817-b469-f7edcb33047a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.sportchek.ca/"],
+  "plugins": []
+}

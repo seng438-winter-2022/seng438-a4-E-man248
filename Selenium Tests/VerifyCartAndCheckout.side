@@ -1,0 +1,156 @@
+{
+  "id": "06a26991-f61d-4cbf-8954-719e1a265195",
+  "version": "2.0",
+  "name": "VerifyCartAndCheckout",
+  "url": "https://www.sportchek.ca",
+  "tests": [{
+    "id": "a698e377-9129-4178-af1f-125e652a8005",
+    "name": "ViewCartItems",
+    "commands": [{
+      "id": "4c1f883e-3cd7-44a2-93ac-464832e08eda",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "190a3bf6-210e-4b52-8bd7-a16c54fdfdc7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x804",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5903c88b-81fc-492c-b0d4-4382849eccbb",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=headerPickupStoreTitle",
+      "targets": [
+        ["id=headerPickupStoreTitle", "id"],
+        ["css=#headerPickupStoreTitle", "css:finder"],
+        ["xpath=//span[@id='headerPickupStoreTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='header-pickup-store-widget']/a/span[2]", "xpath:idRelative"],
+        ["xpath=//a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Your Store:')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e96293bc-2408-4492-9fcd-0fb3b141d066",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=headerPickupStoreTitle",
+      "targets": [
+        ["id=headerPickupStoreTitle", "id"],
+        ["css=#headerPickupStoreTitle", "css:finder"],
+        ["xpath=//span[@id='headerPickupStoreTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='header-pickup-store-widget']/a/span[2]", "xpath:idRelative"],
+        ["xpath=//a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Your Store:')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cdcd94ee-93a5-4dcb-92b2-59b6c3605440",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Brand",
+      "targets": [
+        ["linkText=Brand", "linkText"],
+        ["css=.page-nav__item:nth-child(11) > .page-nav__link", "css:finder"],
+        ["xpath=//a[contains(@href, 'brands')]", "xpath:href"],
+        ["xpath=//li[11]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Brand')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d9ed932-c4a1-4420-b8aa-a1e414fb364f",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=Brand",
+      "targets": [
+        ["linkText=Brand", "linkText"],
+        ["css=.page-nav__item:nth-child(11) > .page-nav__link", "css:finder"],
+        ["xpath=//a[contains(@href, 'brands')]", "xpath:href"],
+        ["xpath=//li[11]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Brand')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "959883a2-c902-4839-8d8d-45898ee92840",
+      "comment": "",
+      "command": "click",
+      "target": "id=header-cart__count",
+      "targets": [
+        ["id=header-cart__count", "id"],
+        ["css=#header-cart__count", "css:finder"],
+        ["xpath=//span[@id='header-cart__count']", "xpath:attributes"],
+        ["xpath=//div[6]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "233247c5-b9da-43a0-b7f5-d140831d1559",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,147.1999969482422)",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "01806674-1f06-430c-92f1-88e59f0e41ad",
+    "name": "Checkout",
+    "commands": [{
+      "id": "33c6fd73-6e84-4618-8859-ad7ce6a4e6b5",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "203542af-927f-4ddb-b770-05bf46577fb5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x804",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d838966e-5ae1-4ba7-82af-eb013d0d76b8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.header-cart__trigger",
+      "targets": [
+        ["css=.header-cart__trigger", "css:finder"],
+        ["xpath=//a[contains(@href, 'shopping-cart.html')]", "xpath:href"],
+        ["xpath=//div[6]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fdad0f7a-b53a-48dc-8cfc-c92fe03f0495",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,124)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "88db3f49-e2c8-4c21-a054-2156933fe55c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.continue-checkout__label",
+      "targets": [
+        ["css=.continue-checkout__label", "css:finder"],
+        ["xpath=//main[@id='main-content']/div[2]/div[3]/div/div[3]/div/div[2]/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "2f049dc5-b3e1-47aa-b4c6-dcbd1ee7d2ba",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.sportchek.ca/"],
+  "plugins": []
+}

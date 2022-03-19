@@ -1,0 +1,76 @@
+{
+  "id": "1739a384-c03f-45f5-86ce-701109717c68",
+  "version": "2.0",
+  "name": "ShippingMethodsFAQ",
+  "url": "https://www.sportchek.ca",
+  "tests": [{
+    "id": "8c78a1c5-c49d-49d0-8512-9f7197a6e814",
+    "name": "ClickAndFindShippingMethodsDescription",
+    "commands": [{
+      "id": "540841ff-702f-496d-88a3-377ae2ca2e7f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aa3acce9-ea24-4b72-b740-add8c2f8a5a4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x801",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "22641d49-4e26-40e5-aeb8-a10f3fcf5d9d",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,3399.199951171875)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d0cfca0-31d7-4cae-8b1a-bfe21bfbc952",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,17500.80078125)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f046c151-5333-4eb4-8ff1-2a4ff5f6daa9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Help & FAQ's",
+      "targets": [
+        ["linkText=Help & FAQ's", "linkText"],
+        ["css=.supportLinks .footer-section__menu > .footer-section__menu-link:nth-child(1)", "css:finder"],
+        ["xpath=(//a[contains(@href, 'help-desk.html')])[2]", "xpath:href"],
+        ["xpath=//div[3]/div[3]/div/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eaf34e71-87d1-4ac8-8eef-2933e791d46e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Shipping Methods",
+      "targets": [
+        ["linkText=Shipping Methods", "linkText"],
+        ["css=.help-desk-list-links-item-wrap:nth-child(2) .help-desk-page-list__item:nth-child(3) > .help-desk-page-list__link", "css:finder"],
+        ["xpath=//a[contains(text(),'Shipping Methods')]", "xpath:link"],
+        ["xpath=//main[@id='main-content']/div[2]/div/div/div[2]/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'help-desk/shipping-page/shipping-methods-page.html')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Shipping Methods')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "857a460c-f75f-4f7b-aa7b-47a456260ced",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.sportchek.ca/"],
+  "plugins": []
+}

@@ -1,0 +1,109 @@
+{
+  "id": "e387e69d-9388-4abe-b28e-705a064adb27",
+  "version": "2.0",
+  "name": "StoreLocator",
+  "url": "https://www.sportchek.ca",
+  "tests": [{
+    "id": "1cd7b0e7-c83d-4681-8d2f-c885e9549137",
+    "name": "SetPreferedStore",
+    "commands": [{
+      "id": "a720fe82-2244-4281-ba1f-f253bc1e0956",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f741c20b-a828-48e1-b18e-421aa872b02a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x801",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9bbccac5-55d7-404b-bbfa-2c7ec7bdebee",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.page-nav__item:nth-child(10) .main-menu__text",
+      "targets": [
+        ["css=.page-nav__item:nth-child(10) .main-menu__text", "css:finder"],
+        ["xpath=//li[10]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Wellness')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9412404c-24fe-4598-a439-9b78b2ed34c0",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.page-nav__item:nth-child(10) .main-menu__text",
+      "targets": [
+        ["css=.page-nav__item:nth-child(10) .main-menu__text", "css:finder"],
+        ["xpath=//li[10]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Wellness')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8163ca5e-f209-4cb4-9aa1-883781af58c8",
+      "comment": "",
+      "command": "click",
+      "target": "id=headerPickupStoreName",
+      "targets": [
+        ["id=headerPickupStoreName", "id"],
+        ["css=#headerPickupStoreName", "css:finder"],
+        ["xpath=//span[@id='headerPickupStoreName']", "xpath:attributes"],
+        ["xpath=//div[@id='header-pickup-store-widget']/a/span[3]", "xpath:idRelative"],
+        ["xpath=//a/span[3]", "xpath:position"],
+        ["xpath=//span[contains(.,'Westbrook Mall Sport Chek')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "230437c9-e4d8-4541-815d-f037e7e7858f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pickup-store-list__item:nth-child(3) > .pickup-store-list__default-store",
+      "targets": [
+        ["css=.pickup-store-list__item:nth-child(3) > .pickup-store-list__default-store", "css:finder"],
+        ["xpath=(//a[contains(text(),'Set as my store')])[2]", "xpath:link"],
+        ["xpath=//section[@id='pickup-store-modal']/form/div/section[3]/div/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f2d170e-bcbd-4d3e-a744-98ac634b5927",
+      "comment": "",
+      "command": "click",
+      "target": "css=.header-pickup-store__link-container",
+      "targets": [
+        ["css=.header-pickup-store__link-container", "css:finder"],
+        ["xpath=//div[@id='header-pickup-store-widget']/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
+        ["xpath=//div[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Your Store:\nChinook Centre Sport Chek')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3accb76c-4a1f-4324-accf-b5c255eca776",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pickup-store-list__item--preferred-store .pickup-store-list__show-details",
+      "targets": [
+        ["css=.pickup-store-list__item--preferred-store .pickup-store-list__show-details", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//section[@id='pickup-store-modal']/form/div/section[3]/div/ul/li/div/header/button", "xpath:idRelative"],
+        ["xpath=//header/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "05fec925-871a-494c-86f1-8bd5b08011be",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.sportchek.ca/"],
+  "plugins": []
+}
